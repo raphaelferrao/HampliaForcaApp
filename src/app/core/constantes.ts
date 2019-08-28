@@ -1,0 +1,8 @@
+
+export const NUMERO_MAXIMO_TENTATIVAS_FORCA: number = 6;
+
+export const NUM_VERSAO_CARGA = '0.00.000';
+
+export const NUM_VERSAO_ATUAL = '0.00.001';
+
+export const NUM_VERSAO_ULTIMA_CARGA = 'NUM_VERSAO_ULTIMA_CARGA';

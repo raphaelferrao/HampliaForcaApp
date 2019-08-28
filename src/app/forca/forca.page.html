@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Forca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item class="itemEnunciado" >
+    <ion-text>
+      <h5>{{questao.cabecalho}}</h5>
+      {{questao.enunciado}}
+    </ion-text>
+  </ion-item>
+
+  <ion-item text-center class="itemImagemForca" >
+    <img [src]="urlImagemForca" class="imgForca" >
+  </ion-item>
+
+  <ion-item class="letrasResposta" id="ionItemLetrasResposta" >
+    <div *ngFor="let letra of letrasResposta" class="letra" >
+      <div class="letraIndividual" [ngClass]="(!letra.charEspecial) ? letra.classCss : 'letraCharEspecial'" >{{letra.letra}}</div>
+    </div>
+  </ion-item> 
+  
+  <ion-footer class="grid-basic-page" *ngIf="!finalizouForca" >
+    <ion-grid>
+      <ion-row *ngFor="let opcoesLetrasRespostaLinha of opcoesLetrasResposta" >
+        <ion-col *ngFor="let opcaoLetraResposta of opcoesLetrasRespostaLinha" >
+          <ion-button color="primary" [ngClass]="opcaoLetraResposta.classCss" 
+                      *ngIf="opcaoLetraResposta.letra != ''"
+                      [disabled]="opcaoLetraResposta.usada"
+                      (click)="verificarRespostaPossuiLetra(opcaoLetraResposta)"  >{{opcaoLetraResposta.letra}}</ion-button>
+          <ion-button color="warning" 
+                      *ngIf="opcaoLetraResposta.botaoDica"
+                      [disabled]="qtdDicasDisponiveis == 0"
+                      (click)="fornecerDicaLetraResposta()" >
+              <ion-icon slot="icon-only" name="flash-off" *ngIf="qtdDicasDisponiveis == 0" ></ion-icon>
+              <ion-icon slot="icon-only" name="flash" *ngIf="qtdDicasDisponiveis > 0" ></ion-icon>
+              <div class="botaoDica">{{qtdDicasDisponiveis}}</div>
+          </ion-button>                      
+        </ion-col>
+      </ion-row>                           
+    </ion-grid>
+
+    <!--
+    <ion-item *ngIf="finalizouForca && !acertouResposta" >
+      <ion-text class="forcaCompleta" >Resposta: <b>{{questao.resposta}}</b></ion-text>
+    </ion-item>
+    -->
+  </ion-footer>
+</ion-content>
+
+<ion-footer class="grid-basic-page" *ngIf="finalizouForca" >
+  <ion-button color="success" (click)="inicializarForca()" expand="block" >Novo Jogo</ion-button> 
+</ion-footer>

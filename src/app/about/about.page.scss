@@ -1,0 +1,18 @@
+
+ion-item-divider {
+    --border-width: 0;
+    --inner-border-width: 0;
+    --border: 0px solid;
+    border-bottom: 0px;
+    color: black;
+
+    ion-label {
+        margin-bottom: 5px;
+    }
+}
+
+ion-icon {
+    margin-right: 5px;
+}
+
+

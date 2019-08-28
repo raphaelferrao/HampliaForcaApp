@@ -1,0 +1,7 @@
+{
+  "name": "HampliaForcaApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

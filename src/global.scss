@@ -1,0 +1,64 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.toolbar-title {
+    white-space: normal;
+}
+  
+.toolbarHamplia {
+    * {
+        color: white;
+    }
+}
+
+ion-navbar {
+    * {
+        --ion-text-color: white;
+    }
+}
+
+ion-toolbar {
+    --background: var(--ion-color-menu-hamplia);
+    --ion-text-color: white;
+}
+
+ion-tab-bar {
+    --background: var(--ion-color-menu-hamplia);
+    --ion-tab-bar-color: white;
+    --ion-tab-bar-color-activated: white;
+}
+
+.msgValidacao{
+    padding-left: 16px;
+    color: #ff0000;
+}
+
+.imgForca {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ion-alert {
+    .alert-title {
+        font-weight: bold !important;
+    }
+
+}
+
+.textRed {
+    color: #ff0000;
+}
+
+.textBlue {
+    color: #0000ff;
+}
